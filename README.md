@@ -1,6 +1,6 @@
-# Disease Data
+# Data
 
-> A web application displaying disease data in mulitple forms. Web App Two. 
+> A web application displaying data in mulitple forms. Web App Two. 
 
 ## Displayed information 
 
