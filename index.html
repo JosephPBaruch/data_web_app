@@ -3,22 +3,41 @@
     <head>
         <meta charset="urf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- include javaScript stuff and CSS stuff -->
-        <link href="style.css" rel="stylesheet"/> <!-- need to update the href later -->
+        <!-- include javaScript stuff and CSS stuff 
+        <link href="style.css" rel="stylesheet"/> need to update the href later
+    -->
         <title>Data</title>
     </head>
     <body>
-
         <h1>Data</h1>
         <h2>Presented by Joseph Baruch</h2>
         <p>Data Goes Here: </p>
 
+        <h1> phones </h1>
+        <ul></ul>
+
+        <script>
+            
+        fetch('https://dummyjson.com/products')
+            .then( res => {
+                return res.json();
+            })
+            .then( data => {
+                data.forEach(user => {
+                    
+                })
+                //console.log(data.products[0].title);
+            })
+
+
+        
+
+        </script>
+
     </body>
     <footer>
         <hr size=5 width=500>
-        
-        <img src="/data_web_app/me.jpg" height="40" width="40" alt="A dashing photo of Joseph Baruch">
         <p>Author: Joseph Baruch</p>
-        <p><a href="josephbaruch48@gmail.com">josephbaruch48@gmail.com</a></p>
+        <!-- <p><a href="josephbaruch48@gmail.com">josephbaruch48@gmail.com</a></p> -->
     </footer>
 </html>
