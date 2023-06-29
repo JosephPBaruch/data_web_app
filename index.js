@@ -2,9 +2,9 @@ const express = require('express');
 
 const app = express();
 
-app.use(express.static(__dirname+'/public'));
+app.use(express.static(__dirname+'/public')); // learn what this is ... what is express.static
 
-const port = 3003;
+const port = 3004;
 
 app.get('/', (req, res) =>{
     res.sendFile('index.html', {root: __dirname });
