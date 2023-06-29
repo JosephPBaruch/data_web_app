@@ -1,10 +1,15 @@
+/* Joseph Baruch 
+   TODO: 
+     - Comment every line and figure out what everything says. 
+ */
+
 const express = require('express');
 
 const app = express();
 
 app.use(express.static(__dirname+'/public')); // learn what this is ... what is express.static
 
-const port = 3004;
+const port = 3000;
 
 app.get('/', (req, res) =>{
     res.sendFile('index.html', {root: __dirname });

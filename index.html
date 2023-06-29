@@ -1,91 +1,22 @@
+<!-- Joseph Baruch
+    - Figure out how to include seperate files (mainly JS) into this file to use differnent objects. 
+    - CSS and more HTML will come later
+
+  -->
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="urf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- include javaScript stuff and CSS stuff 
-        <link href="style.css" rel="stylesheet"/> need to update the href later
-    -->
-        <title>Data</title>
+        <title>Weather Data</title>
     </head>
     <body>
-        <h1>Data</h1>
-        <h2>Presented by Joseph Baruch</h2>
-        <p>Data Goes Here: </p>
-
-        <h1> phones </h1>
-        <ul></ul>
-
+        <h1>Weather Data</h1>
         <script>
             
-          //  fetch('https://dummyjson.com/products')
-            //.then(res => {
-            //    return res.json();
-           // })
-           // .then(data => {
-                
-                //data.forEach(products => {
-                    //for( let i = 0; i < 30; i++ ){
-                    //    if(data.products[i].title[0] === "i"){
-                     //       const markup = `<li>${data.products[i].title}</li>`;
-
-                          //  document.querySelector('ul').insertAdjacentHTML('beforeend', markup );
-                     //   }
-                    //}
-                       
-                    
-              // });
-             //  console.log(data.products); //[0].title);
-           // })
-           // .catch(error => console.log(error));
-
-           //var credentials = btoa("na_baruch:K082ZKc6go");
-           //var auth = { "Authorization" : `Basic ${credentials}` };
-            //fetch("http://site.com/protected/", { headers : auth });
-            //https://username:password@api.meteomatics.com
-            //fetch (url, {
-              //   headers: { "Authorization": `Basic ${credentials}` }
-                //     })
- // eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJ2IjoxLCJ1c2VyIjoibmFfYmFydWNoIiwiaXNzIjoibG9naW4ubWV0ZW9tYXRpY3MuY29tIiwiZXhwIjoxNjg3OTg4Mzg3LCJzdWIiOiJhY2Nlc3MifQ.9q9dmT1UC6PdV1nyPb-wRrl5YN8yIaMbCpucNjix6ukd6qp8F0vPCxYVr0MS6-l68XvZs3Ko2ki2IabPN4IjiQ
-           /* fetch("https://api.meteomatics.com/2023-06-28T12:05:00.000-06:00/t_2m:F/43.7327012,-116.2831349/json?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJ2IjoxLCJ1c2VyIjoibmFfYmFydWNoIiwiaXNzIjoibG9naW4ubWV0ZW9tYXRpY3MuY29tIiwiZXhwIjoxNjg3OTg4Mzg3LCJzdWIiOiJhY2Nlc3MifQ.9q9dmT1UC6PdV1nyPb-wRrl5YN8yIaMbCpucNjix6ukd6qp8F0vPCxYVr0MS6-l68XvZs3Ko2ki2IabPN4IjiQ"
-                 )
-                .then(res => {
-                    return res.json();
-                }).then( data => {
-                    console.log(data);
-                }).catch(error => console.log(error));
-        */
-                fetch("https://api.meteomatics.com/2023-06-28T12:05:00.000-06:00/t_2m:F/43.7327012,-116.2831349/json?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJ2IjoxLCJ1c2VyIjoibmFfYmFydWNoIiwiaXNzIjoibG9naW4ubWV0ZW9tYXRpY3MuY29tIiwiZXhwIjoxNjg3OTk2MTUzLCJzdWIiOiJhY2Nlc3MifQ.zd_hzowA87WWXu2ixGyBG3KDIubwNDoJEt4s5iiz9AJm92JOQTY2fdxA-3JYBklanqevxXis70-dCh05yK_DhA" )
-              .then(res => {
-                    return res.json();
-                }).then( data => {
-                  console.log(data.data[0].coordinates[0].dates[0].value); // .data[0].coordinates[0].dates[0].value\
-
-                }).catch(error => console.log(error));
-
-/*
-            let username='na_baruch'
-            let password='K082ZKc6go'
-            let headers = new Headers();
-            headers.set('Authorization', 'Basic ' + btoa(username + ":" + password));
-
-            fetch('https://login.meteomatics.com/api/v1/token', {
-                method: 'GET', headers: headers
-            }).then(function (resp) {
-                return resp.json();
-            }).then(function (data) {
-                var token = data.access_token;
-                console.log('token', token);
-            }).catch(function (err) {
-                console.log('something went wrong', err);
-            });
-*/
         </script>
 
     </body>
     <footer>
-        <hr size=5 width=500>
-        <p>Author: Joseph Baruch</p>
-        <!-- <p><a href="josephbaruch48@gmail.com">josephbaruch48@gmail.com</a></p> -->
     </footer>
 </html>
