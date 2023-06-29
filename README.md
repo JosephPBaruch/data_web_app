@@ -45,7 +45,7 @@
 - git push origin <branchName>
 5. Delete Repository
 - git branch -D <branchName>
-6. Make a commit with comment 
+6. Make a commit with a comment.
 - git commit -m "Comment"
 7. Add (all) changes (files).
 - git add .
