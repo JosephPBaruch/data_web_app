@@ -20,7 +20,8 @@
 4. ()Create function for retrieving token. 
 5. ()Create function for retrieving weather using token as a passed argument or call function within retrieving weather function. 
 6. ()Call function from html and figure out how to display it. 
-7. Paste all links to documentation 
+7. Paste all links to documentation
+8. Figure out how to hide my password and user information for meteomatics.
 
 ## Nodes
 * With functions make sure to implement callbacks as network responses take time to complete. 
