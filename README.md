@@ -16,12 +16,12 @@
 1. ()Go through index.js and read documentation about function calls. 
 2. (Complete)Resolve port issue.
 3. ()Create seperate js file for api functions. 
-3. ()b: Research callbacks, promises, and await. 
-4. ()Create function for retrieving token. 
-5. ()Create function for retrieving weather using token as a passed argument or call function within retrieving weather function. 
+3. (Complete)b: Research callbacks, promises, and await. 
+4. (Complete)Create function for retrieving token. 
+5. (Complete)Create function for retrieving weather using token as a passed argument or call function within retrieving weather function. 
 6. ()Call function from html and figure out how to display it. 
-7. Paste all links to documentation
-8. Figure out how to hide my password and user information for meteomatics.
+7. (Complete)Paste all links to documentation
+8. ()Figure out how to hide my password and user information for meteomatics.
 
 ## Nodes
 * With functions make sure to implement callbacks as network responses take time to complete. 
@@ -30,6 +30,7 @@
 ### Terminating a Local Host Server
 - sudo lsof -i :<port number>
 - kill -9 <PID>
+- ? Is there a way to do this authomatically withing package.json?
 
 ### Spinning Up a Local Host Server 
 - node index.js
@@ -53,8 +54,9 @@
 8. Change to a different branch.
 - git checkout <branchName>
 
+## Coding Log
 
+> Log Started 6/29/2023. Repository initialized 5/2023.
 
-
-
+- 6/29/2023: Moved my fetch api calls into a functions so I could callback fetchData();.
             
