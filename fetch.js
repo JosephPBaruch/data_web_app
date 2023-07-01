@@ -11,7 +11,7 @@
     - The issue I was having with declaring a variable for the returned fetch data was 
       because I was trying to print it out before it was generated.This was due to unfamiliarity 
       with asynchronous javaScript. 
- */
+ 
 
 // header to be used in token fetch     
     // need to figure out how to hide this
@@ -28,6 +28,7 @@
     let dataType = 'json?'; // data type in .json form
     // put everything together in the CORRECT ORDER
     let URL = 'https://api.meteomatics.com/' + dateTime + statType + place + dataType; 
+    // let it = 10;
 
 // ------ fetch token ------------
     function getToken(){
@@ -50,7 +51,11 @@
             .then(res => {
                 return res.json(); // treat fetch response as a .json format and return to next promis
             }).then( data => {
-                displayData(data.data[0].coordinates[0].dates[0].value);
+                //displayData(data.data[0].coordinates[0].dates[0].value);
+                //console.log(data.data[0].coordinates[0].dates[0].value);
+                //it = ata.data[0].coordinates[0].dates[0].value;
+                //const send = document.getelementbyid("here");
+                innerHTML = "hello"; //data.data[0].coordinates[0].dates[0].value;
             }).catch(error => console.log(error)); // logs error in console if caught 
     }
 
@@ -61,7 +66,18 @@
     }
 
 // ----- run the code -----
-    getToken();
+   //getToken();
+    //console.log(it);
 
 
-    
+   document.getElementById("demo").innerHTML = 5 + 6;
+
+   //function changeColor() {
+   // document.getElementById("my-div").style.backgroundColor = "#00FF00";
+   //}
+
+   //console.log("AHHHHHHH");
+
+   */
+
+   document.getElementById("demo").innerHTML = 5 + 6;
