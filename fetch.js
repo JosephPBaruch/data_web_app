@@ -16,7 +16,7 @@
     headers.set('Authorization', 'Basic ' + btoa(username + ":" + password));
 
 // fetchData URL breakdown 
-    let dateTime =  '2023-06-29T21:50:00.000-06:00' + '/'; // data and time
+    let dateTime =  '2023-06-30T21:50:00.000-06:00' + '/'; // data and time
     let statType = 't_2m:F' + '/'; // temperature 2 meters above ground in F
     let place = '51.5073219,-0.1276474' + '/'; // long, lat
     let dataType = 'json?'; // data type in .json form
@@ -32,9 +32,9 @@
                 return resp.json();
             }).then(function (data) {
                 var token = data.access_token;
-                console.log('token', token);
+                //console.log('token', token);
                 let accessAndToken = 'access_token=' + token;
-                fetchData(accessAndToken);
+                 return fetchData(accessAndToken);
             }).catch(function (err) {
                 console.log('something went wrong', err);
             });
@@ -46,8 +46,11 @@
             .then(res => {
                 return res.json(); // treat fetch response as a .json format and return to next promis
             }).then( data => {
-                console.log(data.data[0].coordinates[0].dates[0].value); // pushes temperature value to console 
+                //console.log(data.data[0].coordinates[0].dates[0].value); // pushes temperature value to console 
+                return data.data[0].coordinates[0].dates[0].value;
             }).catch(error => console.log(error)); // logs error in console if caught 
     }
+    var data = getToken();
+    console.log(data);
+
     
-    getToken();
