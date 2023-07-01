@@ -13,9 +13,9 @@
 - https://www.meteomatics.com/en/api/request/
 
 ## TODO
-1. ()Go through index.js and read documentation about function calls. 
+1. ()Go through index.js and read documentation about function calls (express documentation). 
 2. (Complete)Resolve port issue.
-3. ()Create seperate js file for api functions. 
+3. (Complete)Create seperate js file for api functions. 
 3. (Complete)b: Research callbacks, promises, and await. 
 4. (Complete)Create function for retrieving token. 
 5. (Complete)Create function for retrieving weather using token as a passed argument or call function within retrieving weather function. 
@@ -59,4 +59,7 @@
 > Log Started 6/29/2023. Repository initialized 5/2023.
 
 - 6/29/2023: Moved my fetch api calls into a functions so I could callback fetchData();.
+- 6/30/2023: Tried to include fetch.js into index.html but there is an issue with the MIME type (?). I need to experiment with this more and figure out how to properly include the file.
+- 7/1/2023: 
+
             

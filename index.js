@@ -7,6 +7,9 @@ const express = require('express');
 
 const app = express();
 
+//const fetchData = require('/Users/joseph.baruch/Desktop/Git/data_web_app/fetch.js');
+//console.log(fetchData);
+
 app.use(express.static(__dirname+'/public')); // learn what this is ... what is express.static
 
 const port = 3000;
