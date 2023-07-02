@@ -60,6 +60,7 @@
 
 - 6/29/2023: Moved my fetch api calls into a functions so I could callback fetchData();.
 - 6/30/2023: Tried to include fetch.js into index.html but there is an issue with the MIME type (?). I need to experiment with this more and figure out how to properly include the file.
-- 7/1/2023: 
+- 7/1/2023: Having trouble exporting my fetch.js file in my index.html file. I am not sure what the issue is. Need to continue to research this to figure out the solution.
+- 7/2/2023: Reasearched node.js, express.js and javascript to better understand what is going on behind the scenes. 
 
             
