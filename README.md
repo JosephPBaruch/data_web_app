@@ -13,7 +13,7 @@
 - https://www.meteomatics.com/en/api/request/
 
 ## TODO
-1. ()Go through index.js and read documentation about function calls (express documentation). 
+1. (Complete)Go through index.js and read documentation about function calls (express documentation). 
 2. (Complete)Resolve port issue.
 3. (Complete)Create seperate js file for api functions. 
 3. (Complete)b: Research callbacks, promises, and await. 
