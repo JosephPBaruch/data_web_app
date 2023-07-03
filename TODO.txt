@@ -1,0 +1,9 @@
+DATA_WEB_APP TODO
+
+- Dockerize
+
+- API
+    - Add contacts page 
+    - Other pages
+
+- AWS

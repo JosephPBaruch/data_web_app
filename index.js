@@ -1,6 +1,10 @@
 /* Joseph Baruch 
-   TODO: 
-     - path
+    TODO: 
+        - API
+            - Contact page
+            - Other
+         - Understand middleware
+         - understand all code
  */
 
 const express = require('express') // include express module
