@@ -13,15 +13,7 @@
 - https://www.meteomatics.com/en/api/request/
 
 ## TODO
-1. (Complete)Go through index.js and read documentation about function calls (express documentation). 
-2. (Complete)Resolve port issue.
-3. (Complete)Create seperate js file for api functions. 
-3. (Complete)b: Research callbacks, promises, and await. 
-4. (Complete)Create function for retrieving token. 
-5. (Complete)Create function for retrieving weather using token as a passed argument or call function within retrieving weather function. 
-6. ()Call function from html and figure out how to display it. 
-7. (Complete)Paste all links to documentation
-8. ()Figure out how to hide my password and user information for meteomatics.
+> Located within each documnet.
 
 ## Nodes
 * With functions make sure to implement callbacks as network responses take time to complete. 
@@ -62,5 +54,6 @@
 - 6/30/2023: Tried to include fetch.js into index.html but there is an issue with the MIME type (?). I need to experiment with this more and figure out how to properly include the file.
 - 7/1/2023: Having trouble exporting my fetch.js file in my index.html file. I am not sure what the issue is. Need to continue to research this to figure out the solution.
 - 7/2/2023: Reasearched node.js, express.js and javascript to better understand what is going on behind the scenes. 
+- 7/3/2023: Was able to successfully display weather data fetched from the Meteomatics API to my localhost server on index.html. I did this through researching more on promises. Result isnt exactly what I want but it will do for now in building my website. Also, updated TODO for each file, updated README, and added styles.css.
 
             

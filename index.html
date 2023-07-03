@@ -1,8 +1,11 @@
 <!-- Joseph Baruch
     TODO:
-     - Figure out how to include seperate files (mainly JS) into this file to use differnent objects. 
-     - CSS and more HTML will come later
-
+     - Add more data types
+     - Add footer information 
+     - Add CSS style
+     - Implement user interaction 
+        - Change location 
+        - API(?)
   -->
 <!DOCTYPE html>
 <html>
@@ -14,8 +17,12 @@
     </head> 
     <body>
         <h1>Weather App</h1>
+        <h2>Temperature:</h2>
+        <p id="temp"></p>
         <script>
-            console.log(data);
+            temp.then( res => {
+                document.getElementById("temp").innerHTML = ": " + res;
+            });
         </script>
     </body>
     <footer>
