@@ -1,17 +1,26 @@
 /* Joseph Baruch 
    TODO: 
-     - Comment every line and figure out what everything says. 
+        - 
  */
 
+const port = 3002; 
+
 const express = require('express'); // include express module
+const path = require('path');
 
-const app = express(); // create express application inside 'app'
+const app = express(); // c
+// setup static and middleware
+//app.use(express.static('./public'))
 
-const port = 3000; 
+app.use(express.static(path.join(__dirname, './public')));
 
 app.get('/', (req, res) =>{
-    res.sendFile('index.html', {root: __dirname }); // send index.html to express app
+    res.sendFile(path.resolve(__dirname, 'index.html')) 
 });
+
+app.all('*', (req, res) => {
+    res.status(404).send('resource not found')
+})
 
 app.listen(port, () => { // server now listening for attempts from a client to connect at port
     console.log(`Now listening on port ${port}`); 
