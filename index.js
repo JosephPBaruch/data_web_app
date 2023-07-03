@@ -1,25 +1,23 @@
 /* Joseph Baruch 
    TODO: 
-        - 
+     - path
  */
 
-const port = 3002; 
+const express = require('express') // include express module
+const path = require('path')
+const app = express() // create express application inside 'app'
 
-const express = require('express'); // include express module
-const path = require('path');
+const port = 3000;
 
-const app = express(); // c
 // setup static and middleware
-//app.use(express.static('./public'))
-
-app.use(express.static(path.join(__dirname, './public')));
+app.use(express.static('./public'))
 
 app.get('/', (req, res) =>{
-    res.sendFile(path.resolve(__dirname, 'index.html')) 
+    res.sendFile('index.html', {root: __dirname }); // send index.html to express app
 });
 
 app.all('*', (req, res) => {
-    res.status(404).send('resource not found')
+    res.status(404).send('resource note found')
 })
 
 app.listen(port, () => { // server now listening for attempts from a client to connect at port
