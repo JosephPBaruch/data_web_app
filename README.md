@@ -55,6 +55,7 @@
 - 7/1/2023: Having trouble exporting my fetch.js file in my index.html file. I am not sure what the issue is. Need to continue to research this to figure out the solution.
 - 7/2/2023: Reasearched node.js, express.js and javascript to better understand what is going on behind the scenes. Added the path module to my index.js file and this fixed the problem with linking fetch.js file and index.html. Next, I need to figure out how to extract my data value from my .then() promise in fetch.js. 
 - 7/3/2023: Was able to successfully display weather data fetched from the Meteomatics API to my localhost server on index.html. I did this through researching more on promises. Result isnt exactly what I want but it will do for now in building my website. Also, updated TODO for each file, updated README, and added styles.css.
+- 7/4/2023: Meteomatics allows more parameters withing their URL for fetching data. This will make it very easy to use the same token for multiple data types. It will just take more code withing index.html. I need to see if I can return more than one object in a return statement. 
 
 
             
