@@ -15,9 +15,9 @@
     headers.set('Authorization', 'Basic ' + btoa(username + ":" + password));
 
 // fetchData URL breakdown 
-    let dateTime =  '2023-07-02T21:50:00.000-06:00' + '/'; // data and time
-    let statType = 't_2m:F' + '/'; // temperature 2 meters above ground in F
-    let place = '51.5073219,-0.1276474' + '/'; // long, lat
+    let dateTime =  '2023-07-04T10:05:00.000-06:00' + '/'; // data and time
+    let statType = 't_2m:F,sunrise:sql' + '/'; // temperature 2 meters above ground in F
+    let place = '43.7324936,-116.283308' + '/'; // long, lat
     let dataType = 'json?'; // data type in .json form
     let access = 'access_token=';
     // put everything together in the CORRECT ORDER
@@ -33,8 +33,11 @@ let temp = fetch('https://login.meteomatics.com/api/v1/token', {
             .then(res => {
                 return res.json(); // treat fetch response as a .json format and return to next promis
             }).then( data => {
-                return data.data[0].coordinates[0].dates[0].value;
+                //return data.data[0].coordinates[0].dates[0].value;
             }).catch(error => console.log(error)); // logs error in console if caught 
     }).catch(function (err) {
         console.log('something went wrong', err);
 });
+
+
+// //43.7324936,-116.283308/json?model=mix
