@@ -8,16 +8,20 @@
         - API(?)
   -->
 <!DOCTYPE html>
-<html>
+<html class="html">
     <head>
         <meta charset="urf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Zipcode Weather Data</title>
         <script type="text/javascript" src="/fetch.js"></script> 
-        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <link rel="stylesheet" type="text/css" href="/styles.css" />
     </head> 
     <body>
-        <h1>Baruch House Weather</h1>
+        <header class="head">
+            <h1 class="headText" >Baruch House Weather</h1>
+            <p>Data displayed with <a href="https://www.meteomatics.com/en/sign-up-weather-api-test-account/">Meteomatics</a>Meteomatics</p>
+        </header>
+        
         <h2>Coordinates:</h2>
         <p id="coor"></p>
         <h2>Time:</h2>
@@ -37,6 +41,11 @@
                 document.getElementById("coor").innerHTML = ": " + place;
             });
         </script>
+        <footer class="footer">
+            <p>Author: Joseph Baruch</p>
+            <p><a href="josephbaruch48@gmail.com">josephbaruch48@gmail.com</a></p>
+            <p><a href="https://github.com/JosephPBaruch/data_web_app">Website Repository</a></p>
+          </footer>
     </body>
     <footer>
     </footer>

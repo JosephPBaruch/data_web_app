@@ -15,7 +15,7 @@
     headers.set('Authorization', 'Basic ' + btoa(username + ":" + password));
 
 // fetchData URL breakdown 
-    let dateTime =  '2023-07-04T10:05:00.000-06:00' + '/'; // data and time
+    let dateTime =  '2023-07-05T10:05:00.000-06:00' + '/'; // data and time
     let statType = 't_2m:F,sunrise:sql,uv:idx' + '/'; // temperature 2 meters above ground in F
     let place = '43.7324936,-116.283308' + '/'; // long, lat
     let dataType = 'json?'; // data type in .json form
