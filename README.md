@@ -15,10 +15,6 @@
 ## TODO
 > Located within each documnet.
 
-## Nodes
-* With functions make sure to implement callbacks as network responses take time to complete. 
-* know what callbacks are.
-
 ### Terminating a Local Host Server
 - sudo lsof -i :<port number>
 - kill -9 <PID>
