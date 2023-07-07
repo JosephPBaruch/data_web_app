@@ -54,4 +54,8 @@
 - 7/4/2023: Meteomatics allows more parameters withing their URL for fetching data. This will make it very easy to use the same token for multiple data types. It will just take more code withing index.html. I need to see if I can return more than one object in a return statement. 
 - 7/5/2023: Now that I can get information to index.html from meteomatics I need to be able to disply it properly. I am going to start to develope my page using html and css. I will explore the idea of learning react but we shall see. Today, all I did was mess around with adding some basic css and html. I added my styles.css file to my index.html file and it worked fine.
 - 7/6/2023: Going to start implementing user input for a location that an API (google) then provides the coordinates. Researched a bit about the google geocoding api. Researched how to store html in js. Need to figure out how the order of execution for my api. 
+- 7/7/2023: Didnt really have time to code today. Went on a backpacking trip. 
+- 7/8/2023: On a backpacking trip. No coding.
+- 7/8/2023:
+
             
