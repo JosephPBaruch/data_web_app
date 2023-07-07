@@ -21,6 +21,14 @@
             <h1 class="headText" >Baruch House Weather</h1>
             <p>Data displayed with <a href="https://www.meteomatics.com/en/sign-up-weather-api-test-account/">Meteomatics</a>Meteomatics</p>
         </header>
+                <input type="text">
+        <input type="submit">
+
+        <form onsubmit="download(this['name'].value, this['text'].value)">
+            <input type="text" name="Zipcode" placeholder="/fetch.js" required>
+            <textarea rows=3 cols=50 name="text"> Type Zip Here and click Submit. </textarea>
+            <input type="submit" value="Submit">          
+        </form>
         
         <h2>Coordinates:</h2>
         <p id="coor"></p>
