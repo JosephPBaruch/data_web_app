@@ -56,6 +56,6 @@
 - 7/6/2023: Going to start implementing user input for a location that an API (google) then provides the coordinates. Researched a bit about the google geocoding api. Researched how to store html in js. Need to figure out how the order of execution for my api. 
 - 7/7/2023: Didnt really have time to code today. Went on a backpacking trip. 
 - 7/8/2023: On a backpacking trip. No coding.
-- 7/8/2023:
+- 7/9/2023: Updated coding log and TODO. 
 
             
