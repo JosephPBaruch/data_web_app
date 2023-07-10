@@ -33,7 +33,7 @@
 - git clone <URL>
 4. Push branch to make a pull request.
 - git push origin <branchName>
-5. Delete Branch
+5. Delete Repository
 - git branch -D <branchName>
 6. Make a commit with a comment.
 - git commit -m "Comment"
@@ -57,6 +57,6 @@
 - 7/7/2023: Didnt really have time to code today. Went on a backpacking trip. 
 - 7/8/2023: On a backpacking trip. No coding.
 - 7/9/2023: Updated coding log and TODO. 
-- 7/10/2023: 
+- 7/10/2023: Setup lock that automatically changes time. User imput stored in 'obj'. Need to understand async js to update coordinates in fetch. 
 
             
