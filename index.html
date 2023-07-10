@@ -14,22 +14,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Zipcode Weather Data</title>
         <script type="text/javascript" src="/fetch.js"></script> 
-        <link rel="stylesheet" type="text/css" href="/styles.css" />
+        <link rel="stylesheet" type="text/css" href="/styles.css">
     </head> 
     <body>
         <header class="head">
-            <h1 class="headText" >Baruch House Weather</h1>
-            <p>Data displayed with <a href="https://www.meteomatics.com/en/sign-up-weather-api-test-account/">Meteomatics</a>Meteomatics</p>
+            <h1 class="headText">Baruch House Weather</h1>
+            <p>Data displayed with <a href="https://www.meteomatics.com/en/sign-up-weather-api-test-account/">Meteomatics</a></p>
         </header>
-                <input type="text">
-        <input type="submit">
-
-        <form onsubmit="download(this['name'].value, this['text'].value)">
-            <input type="text" name="Zipcode" placeholder="/fetch.js" required>
-            <textarea rows=3 cols=50 name="text"> Type Zip Here and click Submit. </textarea>
-            <input type="submit" value="Submit">          
+        <form id="myForm">
+            <input type="text" name="zip" value="Zipcode" />
+            <button type="submit">Submit</button>
         </form>
-        
         <h2>Coordinates:</h2>
         <p id="coor"></p>
         <h2>Time:</h2>
@@ -40,7 +35,32 @@
         <p id="sunrise"></p>
         <h2>UVI:</h2>
         <p id="uvi"></p>
+
         <script>
+            let coordinates = '43.7324936,-116.283308/';
+            const form = document.getElementById('myForm');
+
+            function formDataToObject(formData) {
+            const normalizeValues = (values) => (values.length > 1) ? values : values[0];
+            const formElemKeys = Array.from(formData.keys());
+
+            return Object.fromEntries(
+                // store array of values or single value for element key
+                formElemKeys.map(key => [key, normalizeValues(formData.getAll(key))])
+            );
+            }
+
+            form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // 1: get form data
+            const formData = new FormData(form);
+            // 2: store form data in object
+            const obj = formDataToObject(formData);
+            hello = obj;
+
+            });
+
             data.then( res => {
                 document.getElementById("temp").innerHTML = ": " + res.data[0].coordinates[0].dates[0].value;
                 document.getElementById("sunrise").innerHTML = ": " + res.data[1].coordinates[0].dates[0].value;
