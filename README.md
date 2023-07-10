@@ -57,6 +57,6 @@
 - 7/7/2023: Didnt really have time to code today. Went on a backpacking trip. 
 - 7/8/2023: On a backpacking trip. No coding.
 - 7/9/2023: Updated coding log and TODO. 
-- 7/10/2023: 
+- 7/10/2023: Automatically updated time in fetch.js. Also user input is stored in obj within html but I am having an async error with updating a fetch variable. 
 
             
