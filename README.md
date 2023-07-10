@@ -57,5 +57,6 @@
 - 7/7/2023: Didnt really have time to code today. Went on a backpacking trip. 
 - 7/8/2023: On a backpacking trip. No coding.
 - 7/9/2023: Updated coding log and TODO. 
+- 7/10/2023: Setup lock that automatically changes time. User imput stored in 'obj'. Need to understand async js to update coordinates in fetch. 
 
             
