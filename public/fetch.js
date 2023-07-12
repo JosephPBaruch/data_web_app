@@ -4,12 +4,11 @@
         3. Renewing token
         5. Changable location
         
- */
+
 
     // header to be used in token fetch     
         username = 'na_baruch' 
         password = 'K082ZKc6go' 
-        let hello;
         let headers = new Headers(); //
         headers.set('Authorization', 'Basic ' + btoa(username + ":" + password));
 
@@ -40,3 +39,36 @@
         }).catch(function (err) {
             console.log('something went wrong', err);
     });
+*/
+
+    async function letsGetData(place){
+        try{
+            let dateTime = await function date(){
+                if( (today.getMonth()+1) > 10 ){
+                    month = '0' + (today.getMonth()+1);
+                }else{
+                    month = (today.getMonth()+1);
+                }
+
+                if( today.getMinutes() > 10 ){
+                    minutes = '0' + today.getMinutes();
+                }else{
+                    mintues = today.getMinutes();
+                }
+
+                return today.getFullYear() + '-' + month + '-' + today.getDate() 
+                + 'T' + today.getHours() + ':' + minutes + ':00.000-06:00/';
+                console.log('hi');
+            }
+            //console.log(dateTime);
+            //let URL = await function theURL(dateTime){
+            //    console.log('https://api.meteomatics.com/' + dateTime + statType + place + '/' + dataType + access ); 
+            //}
+            //await function display(URL){
+            //    console.log(URL);
+            //}
+        }catch (error){
+            console.log(error);
+        }
+    }
+
