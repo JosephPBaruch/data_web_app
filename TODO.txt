@@ -1,7 +1,5 @@
 DATA_WEB_APP TODO
 
-1. Be able to have the user input a string in index.html and store that value inside a javascript variable in a different doc.
 2. Set up Geocoding API and use user input as an argument. 
 3. Use return coordinate in Meteomatics API and display it. 
-4. Automatically update time of Meteomatics API
 5. Automatically renew token after 2 hours. 
