@@ -3,3 +3,11 @@ DATA_WEB_APP TODO
 2. Set up Geocoding API and use user input as an argument. 
 3. Use return coordinate in Meteomatics API and display it. 
 5. Automatically renew token after 2 hours. 
+
+
+fetch.js Order of Operation
+
+- 2 keys 
+- get user data
+- get coordinates from google dependant on user
+- get weather dependant on coordinates

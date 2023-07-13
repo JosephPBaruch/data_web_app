@@ -59,4 +59,5 @@
 - 7/9/2023: Updated coding log and TODO. 
 - 7/10/2023: Setup lock that automatically changes time. User imput stored in 'obj'. Need to understand async js to update coordinates in fetch. 
 - 7/11/2023: Removed GCP key. Fixed bugs with time in fetch. Researched async javascript. 
+- 7/12/2023: Updated coding log, TODO, and worked more in fetch.js. 
             
