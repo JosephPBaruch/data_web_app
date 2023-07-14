@@ -25,7 +25,8 @@
             <input type="text" name="coor" value="Coordinates" />
             <button type="submit">Submit</button>
         </form>
-        <!-- <h2>Coordinates:</h2>
+
+        <h2>Coordinates:</h2>
         <p id="coor"></p>
         <h2>Time:</h2>
         <p id="time"></p>
@@ -35,38 +36,43 @@
         <p id="sunrise"></p>
         <h2>UVI:</h2>
         <p id="uvi"></p>
-        -->
+        
         <script>
             
             const form = document.getElementById('myForm');
 
             function formDataToObject(formData) {
-            const normalizeValues = (values) => (values.length > 1) ? values : values[0];
-            const formElemKeys = Array.from(formData.keys());
+                const normalizeValues = (values) => (values.length > 1) ? values : values[0];
+                const formElemKeys = Array.from(formData.keys());
 
-            return Object.fromEntries(
-                // store array of values or single value for element key
-                formElemKeys.map(key => [key, normalizeValues(formData.getAll(key))])
-            );
+                return Object.fromEntries(
+                    // store array of values or single value for element key
+                    formElemKeys.map(key => [key, normalizeValues(formData.getAll(key))])
+                );
             }
 
-            form.addEventListener('submit', function (event) {
-            event.preventDefault();
+            let coordinates = form.addEventListener('submit', function (event) {
+                event.preventDefault();
 
-            // 1: get form data
-            const formData = new FormData(form);
-            // 2: store form data in object
-            let coordinates = formDataToObject(formData);
-            letsGetData(coordinates.coor);
+                // 1: get form data
+                const formData = new FormData(form);
+                // 2: store form data in object
+                let coordinates = formDataToObject(formData);
+                return coordinates;
+                
             });
-
-           // data.then( res => {
-             //   document.getElementById("temp").innerHTML = ": " + res.data[0].coordinates[0].dates[0].value;
-             //  document.getElementById("sunrise").innerHTML = ": " + res.data[1].coordinates[0].dates[0].value;
-              //  document.getElementById("uvi").innerHTML = ": " + res.data[2].coordinates[0].dates[0].value;
-              //  document.getElementById("time").innerHTML = ": " + dateTime;
-               // document.getElementById("coor").innerHTML = ": " + place;
-           // });
+            console.log(coordinates);
+            //data(coordinates.coor);
+            //console.log(data);
+/*
+            data.then( res => {
+                document.getElementById("temp").innerHTML = ": " + res.data[0].coordinates[0].dates[0].value;
+                document.getElementById("sunrise").innerHTML = ": " + res.data[1].coordinates[0].dates[0].value;
+                document.getElementById("uvi").innerHTML = ": " + res.data[2].coordinates[0].dates[0].value;
+                document.getElementById("time").innerHTML = ": " + dateTime;
+                document.getElementById("coor").innerHTML = ": " + place;
+            });
+           */
         </script>
         <footer class="footer">
             <p>Author: Joseph Baruch</p>
