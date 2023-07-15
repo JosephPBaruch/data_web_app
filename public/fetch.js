@@ -21,6 +21,8 @@
     // ------ fetch token ------------
 
     let data = async function asyncAwait(coordinates){
+
+        document.getElementById("temp").innerHTML = "hello";
         let token = await fetch('https://login.meteomatics.com/api/v1/token', {
             method: 'GET', headers: headers
             }).then(res => {
