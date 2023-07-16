@@ -22,7 +22,6 @@
 
     let data = async function asyncAwait(coordinates){
 
-        document.getElementById("temp").innerHTML = "hello";
         let token = await fetch('https://login.meteomatics.com/api/v1/token', {
             method: 'GET', headers: headers
             }).then(res => {
@@ -44,8 +43,9 @@
             }).then( data => {
                 return data;
             }).catch(error => console.log(error)); // logs error in console if caught 
-       // console.log(value);
-       return value;
+
+       return value; // this I believe is running before everything else. How do we return something to data?
+       // data.value?
     }
     
     function makeURL(dateTime, place){

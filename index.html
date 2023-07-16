@@ -39,7 +39,7 @@
         
         <script>
             async function values(){
-                const form = document.getElementById('myForm');
+                const form = await document.getElementById('myForm');
 
                 function formDataToObject(formData) {
                     const normalizeValues = (values) => (values.length > 1) ? values : values[0];
@@ -58,14 +58,16 @@
                     const formData = new FormData(form);
                     // 2: store form data in object
                     let coordinates = formDataToObject(formData);
-                    return coordinates;
-                    
+                    return coordinates.coor;
+                    // ok... find a way to add a new promise here then put data(coordinates.coor withing this area)
+                   
                 });
-                //console.log(coordinates);
-                await data(coordinates);
+                console.log(coordinates);
+                
+                //await data(coordinates);
             }
             
-            
+            values();
             //console.log(data);
 /*
             data.then( res => {

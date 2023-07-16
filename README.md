@@ -60,4 +60,7 @@
 - 7/10/2023: Setup lock that automatically changes time. User imput stored in 'obj'. Need to understand async js to update coordinates in fetch. 
 - 7/11/2023: Removed GCP key. Fixed bugs with time in fetch. Researched async javascript. 
 - 7/12/2023: Updated coding log, TODO, and worked more in fetch.js. 
+- 7/13/2023: Finally fixed the async problem. Was getting a tiny bit of burn out because it was taking so long but I stuck it out. I fixed it by switching fetch.js to a async/await format. Works great! Now need to do this within index.html. 
+- 7/14/2023: Tried to implement an async function inside of index.html script tags. This didnt really go anywhere. The main issue that I am having is that I am unable to display information from fetch.js within of index.html. 
+- 7/15/2023: Updated coding log. Had a long day so not able to do much. 
             
