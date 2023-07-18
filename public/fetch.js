@@ -43,9 +43,7 @@
             }).then( data => {
                 return data;
             }).catch(error => console.log(error)); // logs error in console if caught 
-
-       return value; // this I believe is running before everything else. How do we return something to data?
-       // data.value?
+        return value; // this I believe is running before everything else. How do we return something to data?
     }
     
     function makeURL(dateTime, place){

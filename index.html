@@ -22,12 +22,14 @@
             <p>Data displayed with <a href="https://www.meteomatics.com/en/sign-up-weather-api-test-account/">Meteomatics</a></p>
         </header>
         <form id="myForm">
-            <input type="text" name="coor" value="Coordinates" />
+            <input type="text" name="coor" value="43.7324936,-116.283308" />
             <button type="submit">Submit</button>
         </form>
 
         <h2>Coordinates:</h2>
         <p id="coor"></p>
+        <h2>Date:</h2>
+        <p id="date"></p>
         <h2>Time:</h2>
         <p id="time"></p>
         <h2>Temperature:</h2>
@@ -38,46 +40,52 @@
         <p id="uvi"></p>
         
         <script>
-            async function values(){
-                const form = await document.getElementById('myForm');
+            const form = document.getElementById('myForm');
 
-                function formDataToObject(formData) {
-                    const normalizeValues = (values) => (values.length > 1) ? values : values[0];
-                    const formElemKeys = Array.from(formData.keys());
+            function formDataToObject(formData) {
+                const normalizeValues = (values) => (values.length > 1) ? values : values[0];
+                const formElemKeys = Array.from(formData.keys());
 
-                    return Object.fromEntries(
-                        // store array of values or single value for element key
-                        formElemKeys.map(key => [key, normalizeValues(formData.getAll(key))])
-                    );
+                return Object.fromEntries(
+                    // store array of values or single value for element key
+                    formElemKeys.map(key => [key, normalizeValues(formData.getAll(key))])
+                );
+            }
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                // 1: get form data
+                const formData = new FormData(form);
+                // 2: store form data in object
+                let coordinates = formDataToObject(formData);
+                
+                async function display(coordinates){
+                    let value = await data(coordinates);
+                    document.getElementById("temp").innerHTML = value.data[0].coordinates[0].dates[0].value;
+                    document.getElementById("sunrise").innerHTML = value.data[1].coordinates[0].dates[0].value;
+                    document.getElementById("uvi").innerHTML = value.data[2].coordinates[0].dates[0].value;
+                    dateTime();
+                    document.getElementById("coor").innerHTML = coordinates;
+                }
+                display(coordinates.coor);
+            });
+
+            function dateTime(){
+                var today = new Date();  
+                if( (today.getMonth()+1) > 10 ){
+                    month = '0' + (today.getMonth()+1);
+                }else{
+                    month = (today.getMonth()+1);
+                }
+                if( today.getMinutes() < 10 ){
+                    minutes = '0' + today.getMinutes();
+                }else{
+                    minutes = today.getMinutes();
                 }
 
-                let coordinates = await form.addEventListener('submit', function (event) {
-                    event.preventDefault();
-
-                    // 1: get form data
-                    const formData = new FormData(form);
-                    // 2: store form data in object
-                    let coordinates = formDataToObject(formData);
-                    return coordinates.coor;
-                    // ok... find a way to add a new promise here then put data(coordinates.coor withing this area)
-                   
-                });
-                console.log(coordinates);
-                
-                //await data(coordinates);
+                document.getElementById("date").innerHTML = today.getFullYear() + '-' + month + '-' + today.getDate(); 
+                document.getElementById("time").innerHTML = today.getHours() + ':' + minutes;
             }
-            
-            values();
-            //console.log(data);
-/*
-            data.then( res => {
-                document.getElementById("temp").innerHTML = ": " + res.data[0].coordinates[0].dates[0].value;
-                document.getElementById("sunrise").innerHTML = ": " + res.data[1].coordinates[0].dates[0].value;
-                document.getElementById("uvi").innerHTML = ": " + res.data[2].coordinates[0].dates[0].value;
-                document.getElementById("time").innerHTML = ": " + dateTime;
-                document.getElementById("coor").innerHTML = ": " + place;
-            });
-           */
 
         </script>
         <footer class="footer">
