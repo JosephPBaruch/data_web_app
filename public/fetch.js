@@ -20,7 +20,13 @@
         
     // ------ fetch token ------------
 
-    let data = async function asyncAwait(coordinates){
+    let data = async function asyncAwait(place){
+
+        //flet GEOToken = await fetch();
+        // AIzaSyCUdVpwLf0e1MXJ9n7JxPC4xra_ewrOCoM
+        // https://maps.googleapis.com/maps/api/geocode/json?address= 1600 + Amphitheatre + Parkway ,+ Mountain + View ,+CA&key=YOUR_API_KEY
+
+        //let coordinates = await fetch(); // use place here
 
         let token = await fetch('https://login.meteomatics.com/api/v1/token', {
             method: 'GET', headers: headers
