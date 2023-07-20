@@ -1,8 +1,9 @@
 /* Joseph Baruch 
     Initial Coordinates: 43.7324936,-116.283308
     TODO:
-        1. Hide user and password
-        3. Renewing token
+        1. Hide user and password ( nick texted about this)
+        3. Renewing token ( every two hours )
+        4. Geocoding 
         
 */
 
@@ -22,11 +23,17 @@
 
     let data = async function asyncAwait(place){
 
-        //flet GEOToken = await fetch();
+        // let GEOToken = await fetch();
         // AIzaSyCUdVpwLf0e1MXJ9n7JxPC4xra_ewrOCoM
         // https://maps.googleapis.com/maps/api/geocode/json?address= 1600 + Amphitheatre + Parkway ,+ Mountain + View ,+CA&key=YOUR_API_KEY
 
-        //let coordinates = await fetch(); // use place here
+        // let coordinates = await fetch(GeoURL + APIKEY)
+        //.then(res => {
+        //   return res.json(); // treat fetch response as a .json format and return to next promis
+        //}).then( data => {
+        //   return data;
+       //}).catch(error => console.log(error)); 
+        
 
         let token = await fetch('https://login.meteomatics.com/api/v1/token', {
             method: 'GET', headers: headers

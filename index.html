@@ -1,11 +1,7 @@
 <!-- Joseph Baruch
     TODO:
-     - Add more data types
-     - Add footer information 
-     - Add CSS style
-     - Implement user interaction 
-        - Change location 
-        - API(?)
+     - Mutliple fields for address
+     - Make geocoding url package. 
   -->
 <!DOCTYPE html>
 <html class="html">
@@ -22,12 +18,14 @@
             <p>Data displayed with <a href="https://www.meteomatics.com/en/sign-up-weather-api-test-account/">Meteomatics</a></p>
         </header>
         <form id="myForm">
-            <input type="text" name="coor" value="43.7324936,-116.283308" />
+            <input type="text" name="number" value="streetnumber" />
+            <input type="text" name="street" value="streetname" />
+            <input type="text" name="type" value="streettype" />
+            <input type="text" name="city" value="city" />
+            <input type="text" name="state" value="state(abbreviation)" />
             <button type="submit">Submit</button>
         </form>
 
-        <h2>Coordinates:</h2>
-        <p id="coor"></p>
         <h2>Date:</h2>
         <p id="date"></p>
         <h2>Time:</h2>
@@ -57,17 +55,22 @@
                 // 1: get form data
                 const formData = new FormData(form);
                 // 2: store form data in object
-                let coordinates = formDataToObject(formData);
-                
-                async function display(coordinates){
-                    let value = await data(coordinates);
+                let object = formDataToObject(formData);
+                //console.log(coordinates);
+                let geoURL = "https://maps.googleapis.com/maps/api/geocode/json?address=";
+                let address = geoURL + object.number + "+" + object.street + "+" + object.type + ",+" + object.city + ",+" + object.state + "&key=YOUR_API_KEY";
+
+                console.log(address);
+
+                async function display(address){
+                    let value = await data(address);
                     document.getElementById("temp").innerHTML = value.data[0].coordinates[0].dates[0].value;
                     document.getElementById("sunrise").innerHTML = value.data[1].coordinates[0].dates[0].value;
                     document.getElementById("uvi").innerHTML = value.data[2].coordinates[0].dates[0].value;
                     dateTime();
                     document.getElementById("coor").innerHTML = coordinates;
                 }
-                display(coordinates.coor);
+                //display(coordinates.coor); 
             });
 
             function dateTime(){

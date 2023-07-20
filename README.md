@@ -66,4 +66,4 @@
 - 7/16/2023: Worked on C.
 - 7/17/2023: Worked on C.
 - 7/18/2023: I was able to display data from the async/await fetch using callbacks. It is now time to start geocoding using the google api. 
-            
+- 7/19/2023: Finished my tutoring application for the CSAC. 
