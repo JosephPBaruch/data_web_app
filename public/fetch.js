@@ -7,11 +7,11 @@
         
 */
 
+    require('dotenv').config();
+    
     // header to be used in token fetch     
-        username = 'na_baruch' 
-        password = 'K082ZKc6go' 
         let headers = new Headers(); //
-        headers.set('Authorization', 'Basic ' + btoa(username + ":" + password));
+        headers.set('Authorization', 'Basic ' + btoa(process.env.METEO_USER + ":" + process.env.METEO_PASS));
 
     // fetchData URL breakdown 
         
@@ -24,8 +24,7 @@
     let data = async function asyncAwait(place){
 
         // let GEOToken = await fetch();
-        // AIzaSyCUdVpwLf0e1MXJ9n7JxPC4xra_ewrOCoM
-        // https://maps.googleapis.com/maps/api/geocode/json?address= 1600 + Amphitheatre + Parkway ,+ Mountain + View ,+CA&key=YOUR_API_KEY
+        // https://maps.googleapis.com/maps/api/geocode/json?address= 1600 + Amphitheatre + Parkway ,+ Mountain + View ,+CA&key=GEO_API_KEY
 
         // let coordinates = await fetch(GeoURL + APIKEY)
         //.then(res => {
