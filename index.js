@@ -7,6 +7,11 @@
          - understand all code
  */
 
+require('dotenv').config();
+console.log(process.env.METEO_USER);
+console.log(process.env.METEO_PASS);
+console.log(process.env.GEO_API_KEY);
+
 const express = require('express') // include express module
 const path = require('path')
 const app = express() // create express application inside 'app'

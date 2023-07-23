@@ -18,11 +18,11 @@
             <p>Data displayed with <a href="https://www.meteomatics.com/en/sign-up-weather-api-test-account/">Meteomatics</a></p>
         </header>
         <form id="myForm">
-            <input type="text" name="number" value="streetnumber" />
-            <input type="text" name="street" value="streetname" />
-            <input type="text" name="type" value="streettype" />
-            <input type="text" name="city" value="city" />
-            <input type="text" name="state" value="state(abbreviation)" />
+            <input type="text" name="number" value="1600" />
+            <input type="text" name="street" value="Amphitheatre" />
+            <input type="text" name="type" value="Parkway" />
+            <input type="text" name="city" value="Mountain+View" />
+            <input type="text" name="state" value="CA" />
             <button type="submit">Submit</button>
         </form>
 
@@ -56,9 +56,8 @@
                 const formData = new FormData(form);
                 // 2: store form data in object
                 let object = formDataToObject(formData);
-                //console.log(coordinates);
                 let geoURL = "https://maps.googleapis.com/maps/api/geocode/json?address=";
-                let address = geoURL + object.number + "+" + object.street + "+" + object.type + ",+" + object.city + ",+" + object.state + "&key=YOUR_API_KEY";
+                let address = geoURL + object.number + "+" + object.street + "+" + object.type + ",+" + object.city + ",+" + object.state + "&key=";
 
                 console.log(address);
 
@@ -70,7 +69,7 @@
                     dateTime();
                     document.getElementById("coor").innerHTML = coordinates;
                 }
-                //display(coordinates.coor); 
+                //display(address); 
             });
 
             function dateTime(){
