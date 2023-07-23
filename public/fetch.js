@@ -1,7 +1,6 @@
 /* Joseph Baruch 
     Initial Coordinates: 43.7324936,-116.283308
     TODO:
-        1. Hide user and password ( nick texted about this)
         3. Renewing token ( every two hours )
         4. Geocoding 
         
