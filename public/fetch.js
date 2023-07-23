@@ -2,11 +2,10 @@
     Initial Coordinates: 43.7324936,-116.283308
     TODO:
         3. Renewing token ( every two hours )
-        4. Geocoding 
         
 */
 
-    require('dotenv').config();
+require('dotenv').config(); // this cannot be in here
     
     // header to be used in token fetch     
         let headers = new Headers(); //
@@ -20,17 +19,19 @@
         
     // ------ fetch token ------------
 
-    let data = async function asyncAwait(place){
+    let data = async function asyncAwait(){ 
 
-        // let GEOToken = await fetch();
-        // https://maps.googleapis.com/maps/api/geocode/json?address= 1600 + Amphitheatre + Parkway ,+ Mountain + View ,+CA&key=GEO_API_KEY
+    // let data = async function asyncAwait(address){ //place
 
-        // let coordinates = await fetch(GeoURL + APIKEY)
-        //.then(res => {
-        //   return res.json(); // treat fetch response as a .json format and return to next promis
-        //}).then( data => {
-        //   return data;
-       //}).catch(error => console.log(error)); 
+        let coordinates = await fetch('https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=' + process.env.GEO_API_KEY) 
+            
+        // let coordinates = await fetch( address + process.env.GEO_API_KEY) 
+
+            .then(res => {
+                return res.json(); // treat fetch response as a .json format and return to next promis
+            }).then( data => {
+                return data.results[0].geometry.location.lat + "," + data.results[0].geometry.location.lng;
+            }).catch(error => console.log(error)); 
         
 
         let token = await fetch('https://login.meteomatics.com/api/v1/token', {
@@ -38,26 +39,26 @@
             }).then(res => {
                 return res.json();
             }).then(data => {
-                return data;
-               
+                return data.access_token;
             }).catch(function (err) {
                 console.log('something went wrong', err);
         });
 
         let dateTime = await date();
             
-        let URL = await makeURL(dateTime, coordinates);
+        let URL = await makeURL(dateTime, coordinates, token);
           
-        let value = await fetch(URL + token.access_token) // fetch data using token fetched in getToken()
+       let value = await fetch(URL) // fetch data using token fetched in getToken()
             .then(res => {
                 return res.json(); // treat fetch response as a .json format and return to next promis
             }).then( data => {
                 return data;
             }).catch(error => console.log(error)); // logs error in console if caught 
         return value; // this I believe is running before everything else. How do we return something to data?
+ 
     }
-    
-    function makeURL(dateTime, place){
+
+    function makeURL(dateTime, place, token){
         return 'https://api.meteomatics.com/' + dateTime + statType + place + '/' + dataType + access; 
     }
 
