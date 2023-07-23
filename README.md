@@ -68,3 +68,4 @@
 - 7/18/2023: I was able to display data from the async/await fetch using callbacks. It is now time to start geocoding using the google api. 
 - 7/19/2023: Finished my tutoring application for the CSAC. Created multiple fields for user input in index.html. Begain structuring fetch.js for getting a geocoding fetch. 
 - 7/20/2023: Updated readme and organized fetch.js. 
+- 7/22/2023: Going to get started on environment variables, google geocoding. Hopefully by tomorrow I will be able to send an address and get weather data. 
