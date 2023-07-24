@@ -1,5 +1,4 @@
 /* Joseph Baruch */
-
     // Variables for reNew (getting a new token after the previous expired)
     let oldToken;
     let oldHour = 0;
@@ -7,7 +6,7 @@
 
     // header to be used in token fetch  
         let headers = new Headers(); //
-        headers.set('Authorization', 'Basic ' + btoa(use r + ":" + pas s));
+        headers.set('Authorization', 'Basic ' + btoa('na_baruch' + ":" + 'K082ZKc6go'));
 
     // fetchData URL breakdown 
         
@@ -18,7 +17,7 @@
     // ------ fetch token ------------
      let data = async function asyncAwait(address){
        
-        let coordinates = await fetch( address + api key) 
+        let coordinates = await fetch( address + 'AIzaSyCUdVpwLf0e1MXJ9n7JxPC4xra_ewrOCoM') 
             .then(res => {
                 return res.json(); // treat fetch response as a .json format and return to next promis
             }).then( data => {
@@ -73,7 +72,6 @@
             }).then(res => {
                 return res.json();
             }).then(data => {
-                console.log("back in");
                 return data.access_token;
             }).catch(function (err) {
                 console.log('something went wrong', err);
