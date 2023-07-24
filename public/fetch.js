@@ -6,7 +6,7 @@
 
     // header to be used in token fetch  
         let headers = new Headers(); //
-        headers.set('Authorization', 'Basic ' + btoa('na_baruch' + ":" + 'K082ZKc6go'));
+        headers.set('Authorization', 'Basic ' + btoa(use r + ":" + pa ss));
 
     // fetchData URL breakdown 
         
@@ -17,7 +17,7 @@
     // ------ fetch token ------------
      let data = async function asyncAwait(address){
        
-        let coordinates = await fetch( address + 'AIzaSyCUdVpwLf0e1MXJ9n7JxPC4xra_ewrOCoM') 
+        let coordinates = await fetch( address + api key) 
             .then(res => {
                 return res.json(); // treat fetch response as a .json format and return to next promis
             }).then( data => {
