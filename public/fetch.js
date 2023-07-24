@@ -1,15 +1,13 @@
-/* Joseph Baruch 
-    Initial Coordinates: 43.7324936,-116.283308
-    TODO:
-        3. Renewing token ( every two hours )
-        
-*/
+/* Joseph Baruch */
 
-require('dotenv').config(); // this cannot be in here
-    
-    // header to be used in token fetch     
+    // Variables for reNew (getting a new token after the previous expired)
+    let oldToken;
+    let oldHour = 0;
+    let oldMin = 0;
+
+    // header to be used in token fetch  
         let headers = new Headers(); //
-        headers.set('Authorization', 'Basic ' + btoa(process.env.METEO_USER + ":" + process.env.METEO_PASS));
+        headers.set('Authorization', 'Basic ' + btoa(use r + ":" + pas s));
 
     // fetchData URL breakdown 
         
@@ -18,48 +16,34 @@ require('dotenv').config(); // this cannot be in here
         let access = 'access_token=';
         
     // ------ fetch token ------------
-
-    let data = async function asyncAwait(){ 
-
-    // let data = async function asyncAwait(address){ //place
-
-        let coordinates = await fetch('https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=' + process.env.GEO_API_KEY) 
-            
-        // let coordinates = await fetch( address + process.env.GEO_API_KEY) 
-
+     let data = async function asyncAwait(address){
+       
+        let coordinates = await fetch( address + api key) 
             .then(res => {
                 return res.json(); // treat fetch response as a .json format and return to next promis
             }).then( data => {
                 return data.results[0].geometry.location.lat + "," + data.results[0].geometry.location.lng;
             }).catch(error => console.log(error)); 
         
-
-        let token = await fetch('https://login.meteomatics.com/api/v1/token', {
-            method: 'GET', headers: headers
-            }).then(res => {
-                return res.json();
-            }).then(data => {
-                return data.access_token;
-            }).catch(function (err) {
-                console.log('something went wrong', err);
-        });
+        let token = await renew();
 
         let dateTime = await date();
             
         let URL = await makeURL(dateTime, coordinates, token);
-          
-       let value = await fetch(URL) // fetch data using token fetched in getToken()
+     
+        let value = await fetch(URL) // fetch data using token fetched in getToken()
             .then(res => {
                 return res.json(); // treat fetch response as a .json format and return to next promis
             }).then( data => {
                 return data;
             }).catch(error => console.log(error)); // logs error in console if caught 
         return value; // this I believe is running before everything else. How do we return something to data?
- 
+
     }
 
     function makeURL(dateTime, place, token){
-        return 'https://api.meteomatics.com/' + dateTime + statType + place + '/' + dataType + access; 
+        console.log(token);
+        return 'https://api.meteomatics.com/' + dateTime + statType + place + '/' + dataType + access + token; 
     }
 
     function date(){
@@ -78,4 +62,27 @@ require('dotenv').config(); // this cannot be in here
 
         return today.getFullYear() + '-' + month + '-' + today.getDate() 
         + 'T' + today.getHours() + ':' + minutes + ':00.000-06:00/';
+    }
+
+    async function renew(){
+        var todayNow = new Date();  
+        if(oldHour == 0  || ((todayNow.getHours() - oldHour) >= 2) && ((todayNow.getMinutes() - oldMin) >= 0 ) ){
+            console.log(oldHour);
+            let newToken = await fetch('https://login.meteomatics.com/api/v1/token', {
+            method: 'GET', headers: headers
+            }).then(res => {
+                return res.json();
+            }).then(data => {
+                console.log("back in");
+                return data.access_token;
+            }).catch(function (err) {
+                console.log('something went wrong', err);
+            }); 
+            oldHour = todayNow.getHours();
+            oldMinute = todayNow.getMinutes();
+            oldToken = newToken;
+            return newToken;
+        }else{
+            return oldToken;
+        }
     }

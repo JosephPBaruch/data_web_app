@@ -69,4 +69,4 @@
 - 7/19/2023: Finished my tutoring application for the CSAC. Created multiple fields for user input in index.html. Begain structuring fetch.js for getting a geocoding fetch. 
 - 7/20/2023: Updated readme and organized fetch.js. 
 - 7/22/2023: Going to get started on environment variables, google geocoding. Hopefully by tomorrow I will be able to send an address and get weather data. 
-- 7/23/2023: I was able to make a .gitignore, .env file, and install dotenv. Running into problems getting my environment variables into fetch.js. The issue is require() cannot be used in the browser. Index.js is note used in the browser that is why it can use require. 
+- 7/23/2023: I was able to make a .gitignore, .env file, and install dotenv. Running into problems getting my environment variables into fetch.js. The issue is require() cannot be used in the browser. Index.js is note used in the browser that is why it can use require. Tried running app with hardcoding credintials and everything works great. Hopefully will figure out how to renew tokens today after two hours. Might ask my advisor about .env values. Was able to get a renewing token using a basic function.
