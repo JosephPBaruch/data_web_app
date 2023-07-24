@@ -1,11 +1,4 @@
-/* Joseph Baruch 
-    TODO: 
-        - API
-            - Contact page
-            - Other
-         - Understand middleware
-         - understand all code
- */
+/* Joseph Baruch */
 
 require('dotenv').config();
 console.log(process.env.METEO_USER);
