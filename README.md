@@ -1,6 +1,6 @@
 # Weather Data
 
-> A web application displaying weather data for a given ZIPCODE. Powered by Meteomatics. 
+> A web application displaying weather data for a user inputted address. Powered by Meteomatics and Google Cloud Geocoding API. 
 
 ## Meteomatics Infomation and Documentation
 1. MeteoMatics API Documentation 
@@ -12,18 +12,18 @@
 4. API Requests Documentation
 - https://www.meteomatics.com/en/api/request/
 
-## TODO
-> Located within each documnet.
+## Google Cloud Geocoding API Documentation
+1. Geocoding API Documentation
+- https://developers.google.com/maps/documentation/geocoding
 
 ### Terminating a Local Host Server
 - sudo lsof -i :<port number>
 - kill -9 <PID>
-- ? Is there a way to do this authomatically withing package.json?
 
 ### Spinning Up a Local Host Server 
 - node index.js
 
-## GitHub Cheat Sheet
+### GitHub Cheat Sheet
 
 1. Merge (local) from a branch to main.
 - git merge main <branchName> 
@@ -42,7 +42,7 @@
 8. Change to a different branch.
 - git checkout <branchName>
 
-## Coding Log
+### Coding Log
 
 > Log Started 6/29/2023. Repository initialized 5/2023.
 
@@ -70,3 +70,4 @@
 - 7/20/2023: Updated readme and organized fetch.js. 
 - 7/22/2023: Going to get started on environment variables, google geocoding. Hopefully by tomorrow I will be able to send an address and get weather data. 
 - 7/23/2023: I was able to make a .gitignore, .env file, and install dotenv. Running into problems getting my environment variables into fetch.js. The issue is require() cannot be used in the browser. Index.js is note used in the browser that is why it can use require. Tried running app with hardcoding credintials and everything works great. Hopefully will figure out how to renew tokens today after two hours. Might ask my advisor about .env values. Was able to get a renewing token using a basic function.
+- 7/24/2023: Commented and cleaned up all of my code. I expect to have a meeting with my advisor soon so I want to be prepared. It is good practice too. I need to scrub up on my knowledge of what is going on within index.js. Added more data types and created a function to convert wind direction degrees to a word value. 
