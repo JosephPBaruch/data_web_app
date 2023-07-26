@@ -42,6 +42,14 @@
 8. Change to a different branch.
 - git checkout <branchName>
 
+## Docker CLI Cheat Sheet
+1. Build an image 
+- docker build . -t joseph.baruch/<custom-container_name>
+2. Run a container with and publish a container’s port(s) to the host.
+- docker run -it -p <localhost port>:<expose port> joseph.baruch/<custom-container_name>
+3. For others...
+- https://docs.docker.com/get-started/docker_cheatsheet.pdf 
+
 ### Coding Log
 
 > Log Started 6/29/2023. Repository initialized 5/2023.
