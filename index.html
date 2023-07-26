@@ -6,7 +6,7 @@
         <meta charset="urf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Webpage scalable for any device-->
         <title>Get Weather</title>
-        <script type="text/javascript" src="/fetch.js"></script> 
+        <script type="text/javascript" src="/fetch.js"></script>  
         <link rel="stylesheet" type="text/css" href="/styles.css">
     </head> 
     <body>
@@ -44,7 +44,6 @@
             <p id="direction"></p>
         
         <script>
-            console.log(process.env.METEO_USER);
             const form = document.getElementById('myForm'); // get form and create variable
 
             form.addEventListener('submit', function (event) { // run after submit button is clicked
