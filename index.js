@@ -1,10 +1,11 @@
 /* Joseph Baruch */
 
 // access and display environment variables until correctly used in code 
-require('dotenv').config(); // include dotenv module for environment variables
-    console.log(process.env.METEO_USER);
-    console.log(process.env.METEO_PASS);
-    console.log(process.env.GEO_API_KEY);
+//require('dotenv').config(); // include dotenv module for environment variables
+//    console.log(process.env.METEO_USER);
+//    console.log(process.env.METEO_PASS);
+//    console.log(process.env.GEO_API_KEY);
+
 
 const express = require('express') // include express module
 const path = require('path') // include path module 
