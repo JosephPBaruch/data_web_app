@@ -46,7 +46,8 @@
 1. Build an image 
 - docker build . -t joseph.baruch/<custom-container_name>
 2. Run a container with and publish a container’s port(s) to the host.
-- docker run -it -p <localhost port>:<expose port> joseph.baruch/<custom-container_name>
+- docker run -it -p <localhost_port>:<expose_port> joseph.baruch/<custom-container_name>
+> You wont be able to see it at expose port (only localhost port)
 3. For others...
 - https://docs.docker.com/get-started/docker_cheatsheet.pdf 
 
@@ -79,3 +80,5 @@
 - 7/22/2023: Going to get started on environment variables, google geocoding. Hopefully by tomorrow I will be able to send an address and get weather data. 
 - 7/23/2023: I was able to make a .gitignore, .env file, and install dotenv. Running into problems getting my environment variables into fetch.js. The issue is require() cannot be used in the browser. Index.js is note used in the browser that is why it can use require. Tried running app with hardcoding credintials and everything works great. Hopefully will figure out how to renew tokens today after two hours. Might ask my advisor about .env values. Was able to get a renewing token using a basic function.
 - 7/24/2023: Commented and cleaned up all of my code. I expect to have a meeting with my advisor soon so I want to be prepared. It is good practice too. I need to scrub up on my knowledge of what is going on within index.js. Added more data types and created a function to convert wind direction degrees to a word value. 
+- 7/25/2023: Researched how to properly use environmnet variables but didnt get far. 
+- 7/26/2023: First tried experimenting with environment variables again but didnt get far either. I have a theory that my issue is not understanding the proper format for fetch() and where to host those calls. My advisor says that fetch shoudl be within index.js but I couldnt include index.js inside of index.html. Postponing that problem I successfully made a docker image and ran a container in localhost. 

@@ -1,4 +1,4 @@
 DATA_WEB_APP TODO
 
 1. Properly use environment variables before launch. 
-2. Dockerize
+2. Nodemon
