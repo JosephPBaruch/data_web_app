@@ -27,5 +27,5 @@ app.all('*', (req, res) => {
 
 // server now listening for attempts from a client to connect at port
 app.listen(port, () => { 
-    console.log(`Now listening on port ${port}`); 
+    console.log(`Now listening in localhost`); 
 });
