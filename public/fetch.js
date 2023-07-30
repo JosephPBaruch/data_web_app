@@ -7,7 +7,7 @@
 
     // header to be used in meteomatics token fetch  
         let headers = new Headers(); //
-        headers.set('Authorization', 'Basic ' + btoa('na_baruch' + ":" + 'K082ZKc6go')); 
+        headers.set('Authorization', 'Basic ' + btoa('na' + ":" + 'Kgo')); 
 
     // static fetchData URL breakdown 
         let header = 'https://api.meteomatics.com/';
@@ -33,7 +33,7 @@
 
     // return latitude and longitude in correct format for meteomatics api fetch
     async function latLong(address){
-        let coordinates = await fetch( address + 'AIzaSyCUdVpwLf0e1MXJ9n7JxPC4xra_ewrOCoM') 
+        let coordinates = await fetch( address + '') 
             .then(res => {
                 return res.json(); // treat fetch response as a .json format and return to next promise
             }).then( data => {

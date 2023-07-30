@@ -4,7 +4,8 @@
   "description": "A web app displaying weather data",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start-frontend": "nodemon app.js",
+    "start-backend": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
