@@ -82,3 +82,4 @@
 - 7/24/2023: Commented and cleaned up all of my code. I expect to have a meeting with my advisor soon so I want to be prepared. It is good practice too. I need to scrub up on my knowledge of what is going on within index.js. Added more data types and created a function to convert wind direction degrees to a word value. 
 - 7/25/2023: Researched how to properly use environmnet variables but didnt get far. 
 - 7/26/2023: First tried experimenting with environment variables again but didnt get far either. I have a theory that my issue is not understanding the proper format for fetch() and where to host those calls. My advisor says that fetch shoudl be within index.js but I couldnt include index.js inside of index.html. Postponing that problem I successfully made a docker image and ran a container in localhost . 
+- 7/29/2023: Worked on creating an api so that i dont expose my environment variables to the internet. 
