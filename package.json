@@ -6,7 +6,6 @@
   "scripts": {
     "start-frontend": "nodemon app.js",
     "start-backend": "nodemon index.js",
-    "front": "nodemon mockfront.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
