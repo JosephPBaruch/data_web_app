@@ -1,4 +1,4 @@
-/* Joseph Baruch */
+/* Joseph Baruch
 
     // variables for renew (getting a new token after the previous expired)
         let oldToken;
@@ -16,8 +16,14 @@
         let access = 'access_token=';
         
     // main(): using the users inputted address, fetch coordinates then weather data
+
+*/
+
      let data = async function main(address){
-       
+        let value = await
+        return value;
+     }
+       /*
         let coordinates = await latLong(address); // address to coordinates
         
         let token = await renewToken(); // meteomatics fetch token
@@ -28,7 +34,7 @@
      
         let value = await weatherObj(URL); // fetch weather data
 
-        return value; // return weather data
+         // return weather data
     }
 
     // return latitude and longitude in correct format for meteomatics api fetch
@@ -111,3 +117,4 @@
             }).catch(error => console.log(error)); // logs error in console if caught 
         return obj;
     }
+    */
