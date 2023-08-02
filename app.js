@@ -5,7 +5,7 @@ const express = require('express') // include express module
 const path = require('path') // include path module 
 const app = express() // create express application inside 'app'
 
-const port = 3000;
+const port = process.env.FRONTEND_PORT || 3000;
 
 // setup static and middleware
 app.use(express.static('./public')) // set path to public folder
@@ -16,7 +16,7 @@ app.get('/', (req, res) =>{
 });
 
 app.get('/results', (req, res) =>{
-    fetch('http://localhost:3500/results?number=' + req.query.number + '&street=' + req.query.street + '&type=' + req.query.type + '&city=' + req.query.city + '&state=' + req.query.state ) // 'http://localhost:3000/results?number=14126&street=Rainy&type=Place&city=Boise&state=ID' ) 
+    fetch(process.env.LOCAL_API + req.query.number + '&street=' + req.query.street + '&type=' + req.query.type + '&city=' + req.query.city + '&state=' + req.query.state ) // 'http://localhost:3000/results?number=14126&street=Rainy&type=Place&city=Boise&state=ID' ) 
          .then(res => {
              return res.json(); // treat fetch response as a .json format and return to next promise
          }).then( data => {
