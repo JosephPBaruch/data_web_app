@@ -9,7 +9,6 @@ const app = express()
 app.use(express.static('./public'))
 
 app.get('/results', (req, res) =>{
-
     let number = req.query.number;
     let street = req.query.street;
     let type = req.query.type;
