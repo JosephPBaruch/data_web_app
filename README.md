@@ -50,6 +50,16 @@
 > You wont be able to see it at expose port (only localhost port)
 3. For others...
 - https://docs.docker.com/get-started/docker_cheatsheet.pdf 
+4. Removing all images (force remove)
+- docker rmi $(docker images -q) -f
+5. Entering executive mode
+- docker exec -it <container_name> bash 
+- Exit from exec mode by typing 'exit'
+6. Flags
+- -f : force (quit)
+- -p : port
+- -d : detached mode
+- --name : sets the name of the container
 
 ### Coding Log
 
@@ -85,3 +95,7 @@
 - 7/29/2023: Worked on creating an api so that i dont expose my environment variables to the internet.
 - 7/30/2023: Figured out that I neeed a backend and a front end so I experimented with doing this outside of my app. Tried passing google geocoding api values. This was successful.
 - 7/31/2023: With a lot of experimentation I was able to successfully make a front end and back end. Now I need to dockerize the front and back and then I am going to AWS.
+- 8/1/2023:
+- 8/2/2023:
+- 8/3/2023:
+

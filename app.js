@@ -13,9 +13,15 @@ app.use(express.static('./public')) // set path to public folder
 // send index.html to express app
 app.get('/', (req, res) =>{
     res.sendFile('app.html', {root: __dirname }); 
-});
+}); 
+
+app.get('/working', (req, res) =>{
+    
+    res.json("hello");
+}); 
 
 app.get('/results', (req, res) =>{
+    res.json("hello");
     fetch(process.env.LOCAL_API + req.query.number + '&street=' + req.query.street + '&type=' + req.query.type + '&city=' + req.query.city + '&state=' + req.query.state ) // 'http://localhost:3000/results?number=14126&street=Rainy&type=Place&city=Boise&state=ID' ) 
          .then(res => {
              return res.json(); // treat fetch response as a .json format and return to next promise
