@@ -42,11 +42,12 @@
 8. Change to a different branch.
 - git checkout <branchName>
 
-## Docker CLI Cheat Sheet
+### Docker CLI Cheat Sheet
+
 1. Build an image 
 - docker build . -t joseph.baruch/<custom-container_name>
 2. Run a container with and publish a container’s port(s) to the host.
-- docker run -it -p <localhost_port>:<expose_port> joseph.baruch/<custom-container_name>
+- docker run -p <localhost_port>:<expose_port> joseph.baruch/<custom-container_name>
 > You wont be able to see it at expose port (only localhost port)
 3. For others...
 - https://docs.docker.com/get-started/docker_cheatsheet.pdf 
@@ -60,6 +61,10 @@
 - -p : port
 - -d : detached mode
 - --name : sets the name of the container
+7. Docker with Nodemon (volume tag)
+- docker run -p 3001:3000 -v $(PWD):/app <image_name>
+8. Print out contents of file in CLI
+- cat
 
 ### Coding Log
 

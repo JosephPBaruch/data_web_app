@@ -3,18 +3,17 @@ FROM node:20.5.0
 # Create app directory
 WORKDIR /app
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
+# Copy over the package.json file
 COPY package.json /app
 
-RUN npm install
-# If you are building your code for production
-# RUN npm ci --omit=dev
+# Install dependencies listed in package.json
+RUN npm install 
 
-# Bundle app source
+# Copy the remaining files
 COPY . ./
 
+# Port that is exposed (not displayed necessarily)
+# This is for show (doesnt actually expose the port)
 EXPOSE 3000
 
 CMD ["npm", "run", "start-frontend"]
