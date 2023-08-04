@@ -16,4 +16,4 @@ COPY . ./
 # This is for show (doesnt actually expose the port)
 EXPOSE 3000
 
-CMD ["npm", "run", "start-frontend"]
+CMD ["npm", "run", "start"]

@@ -100,7 +100,7 @@
 - 7/29/2023: Worked on creating an api so that i dont expose my environment variables to the internet.
 - 7/30/2023: Figured out that I neeed a backend and a front end so I experimented with doing this outside of my app. Tried passing google geocoding api values. This was successful.
 - 7/31/2023: With a lot of experimentation I was able to successfully make a front end and back end. Now I need to dockerize the front and back and then I am going to AWS.
-- 8/1/2023:
-- 8/2/2023:
-- 8/3/2023:
+- 8/1/2023: Experimented with docker and making everything seamless. 
+- 8/2/2023: Trying to figure out docker but had little time to code. 
+- 8/3/2023: I only have one service to dockerize now. I basically moved index.js to app.js under results because there was no reason for a separate file. This cleaned up the code. I learned a lot about docker today. My dockerfile works but I cant access localhost from within. I need to do more research on why that is tomorrow. 
 

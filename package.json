@@ -4,10 +4,13 @@
   "description": "A web app displaying weather data",
   "main": "index.js",
   "scripts": {
-    "start-frontend": "nodemon app.js",
-    "build_docker_image": "docker build . -t joseph.baruch/image_with_npm_2",
-    "docker_nodemon_image": "docker run -it -p 3001:3000 -v $PWD:/usr/src/app joseph.baruch/image_with_npm_2",
-    "build_run": "npm run build_docker_image; npm run docker_nodemon_image"
+    "start": "nodemon app.js",
+    "build": "docker build . -t imaged_5",
+    "container": "docker run -p 3000:3000 -v $PWD:/app imaged_5",
+    "build_run": "npm run build; npm run container",
+    "delete_images": "docker rmi $(docker images -q) -f",
+    "delete_containers": "docker rm $(docker ps -aq)"
+
   },
   "repository": {
     "type": "git",
