@@ -15,6 +15,10 @@ app.get('/', (req, res) =>{
     res.sendFile('app.html', {root: __dirname }); 
 }); 
 
+app.get('/resources', (req, res) =>{
+    res.sendFile('app_resources.html', {root: __dirname }); 
+});
+
 app.get('/results', (req, res) =>{
     let number = req.query.number;
     let street = req.query.street;

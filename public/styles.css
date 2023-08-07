@@ -12,9 +12,31 @@
 .headText {
     font-size: 50px;
     width: 40%;
-    padding: 10px;
+    padding: 5px;
+}
+
+.headComment {
+    font-size: 12px;
+    width: 40%;
+    padding: 5px;
 }
 
 .footer {
     background-color: gray;
+}
+
+.container {
+    display: flex;
+}
+
+p {
+    flex: .104;
+}
+
+fieldset {
+    border: 0;
+}
+
+form {
+    border: 1;
 }
