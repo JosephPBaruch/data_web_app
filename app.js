@@ -61,14 +61,12 @@ app.get('/results', (req, res) =>{
     main();
 
       // return latitude and longitude in correct format for meteomatics api fetch
-      async function latLong(number, street, type, city, state){
+    async function latLong(number, street, type, city, state){
         let coordinates = await fetch( 'https://maps.googleapis.com/maps/api/geocode/json?address=+' + number + '+' + street + '+' + type + ',+' + city + ',+' + state + '&key=' + process.env.GEO_API_KEY) 
             .then(res => {
                 return res.json(); // treat fetch response as a .json format and return to next promise
             }).then( data => {
                 // return latitude and longitude
-                //res.json
-                //console.log(data);
                 return data.results[0].geometry.location.lat + "," + data.results[0].geometry.location.lng + '/';
             }).catch(error => console.log(error)); 
         return coordinates;
