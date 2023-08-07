@@ -104,3 +104,5 @@
 - 8/2/2023: Trying to figure out docker but had little time to code. 
 - 8/3/2023: I only have one service to dockerize now. I basically moved index.js to app.js under results because there was no reason for a separate file. This cleaned up the code. I learned a lot about docker today. My dockerfile works but I cant access localhost from within. I need to do more research on why that is tomorrow. 
 - 8/4/2023: Woke up this morning and spun up my container to find that my issue from yesterday has been resolved(?).
+- 8/5/2023:
+- 8/6/2023: 
