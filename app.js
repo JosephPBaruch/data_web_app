@@ -11,7 +11,7 @@ var API_Func = require('./Libraries/fetch_function.js');
 const port = process.env.PORT || 3000;
 
 // setup static and middleware
-app.use(express.static('./public')) // set path to public folder
+app.use(express.static('./public')) // set path to 'public' folder
 
 // send index.html to express app
 app.get('/', (req, res) =>{
@@ -21,6 +21,12 @@ app.get('/', (req, res) =>{
 app.get('/resources', (req, res) =>{
    
     res.sendFile('app_resources.html', {root: __dirname }); 
+
+});
+
+app.get('/display', (req, res) =>{
+    
+    res.sendFile('display.html', {root: __dirname }); 
 
 });
 

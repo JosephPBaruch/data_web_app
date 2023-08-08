@@ -1,3 +1,4 @@
+/* Joseph Baruch */
 // variables for renew (getting a new token after the previous expired)
 let oldToken;
 let oldHour = 0;

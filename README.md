@@ -104,5 +104,7 @@
 - 8/2/2023: Trying to figure out docker but had little time to code. 
 - 8/3/2023: I only have one service to dockerize now. I basically moved index.js to app.js under results because there was no reason for a separate file. This cleaned up the code. I learned a lot about docker today. My dockerfile works but I cant access localhost from within. I need to do more research on why that is tomorrow. 
 - 8/4/2023: Woke up this morning and spun up my container to find that my issue from yesterday has been resolved(?).
-- 8/5/2023:
-- 8/6/2023: 
+- 8/5/2023: Tried to research more about AWS and the issue I am having with docker credentials not saving properly. I encountered this when trying to link my ECR with my docker images. 
+- 8/6/2023: Started to implement my API and did they by creating a resources page. Still am stuck on the docker credentials issue so I did this rather than being stuck and staring at my screen for hours. 
+- 8/7/2023: I moved all of my functions that did my fetch into a lib file to clean up app.js and make it more readable. This was pretty easy and a good step.
+- 8/8/2023: Created a display page seperate from the user input address page (main page). I did this by using localStorage which was cool because I had never heard of that before today. 

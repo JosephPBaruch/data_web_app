@@ -1,3 +1,4 @@
+/* Joseph Baruch */
 .html {
     background-color: tan;
 }
@@ -11,7 +12,7 @@
 
 .headText {
     font-size: 50px;
-    width: 40%;
+    width: 50%;
     padding: 5px;
 }
 
@@ -39,4 +40,12 @@ fieldset {
 
 form {
     border: 1;
+}
+
+.inline > h2 {
+    display:inline;   
+}
+
+.value {
+    color: rgb(16, 96, 43);
 }

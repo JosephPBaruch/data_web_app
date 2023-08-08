@@ -1,5 +1,6 @@
 /* Joseph Baruch */
 
+// fetch to backend so I can do my fetch API calls and use my protected environment variables
 let data = async function main( number, street, type, city, state){
     let data = await fetch('http://localhost:3000/results' + '?number=' + number + '&street=' + street + '&type=' + type + '&city='+ city + '&state=' + state ) 
         .then(res => {
