@@ -60,6 +60,7 @@ exports.renewToken = async function(user, pass){ // async because of await fetch
 // return current date and time in the correct format for meteomatics fetch
 exports.date = async function(lat, long, key){
 
+
     let offset = await fetch('https://maps.googleapis.com/maps/api/timezone/json?location=' + lat + '%2C' + long + '&timestamp=1331161200&key=' + key ) 
         .then(res => {
             return res.json(); // treat fetch response as a .json format and return to next promise
@@ -69,7 +70,34 @@ exports.date = async function(lat, long, key){
 
     var today = new Date();  // new instance of date()
 
-    let hour = today.getHours() + offset;
+    let dateAdd = 0;
+    let monthChanger = 0;
+
+    if((today.getHours() + offset) > 24 ){
+        hour = (today.getHours() + offset) - 24 ; 
+        dateAdd++;
+    }if((today.getHours() + offset) < 0){
+        hour = (today.getHours() + offset) + 24 ; 
+        dateAdd--;
+    }else{
+        hour = today.getHours() + offset;
+    }
+
+    if(dateAdd != 0 ){
+        date = today.getDate() + dateAdd;
+        
+        if(date > 31 ){
+            monthChanger++;
+            date = '0';
+        }
+        if(date <= 0 ){
+            monthChanger--;
+            date = '30';
+        }
+        
+    }else{
+        date = today.getDate();
+    }
 
     if( (today.getMonth()+1) < 10 ){ // add '0' if current month < 10
         month = '0' + (today.getMonth()+1);
@@ -77,13 +105,18 @@ exports.date = async function(lat, long, key){
         month = (today.getMonth()+1);
     }
 
+    if(monthChanger != 0 ){
+        month += monthChanger;
+    }
+
     if( today.getMinutes() < 10 ){ // add '0' if current minute < 10
         minutes = '0' + today.getMinutes();
     }else{
         minutes = today.getMinutes();
     }
+
     // no need to modify hours because of military time  
-    return today.getFullYear() + '-' + month + '-' + today.getDate() 
+    return today.getFullYear() + '-' + month + '-' + date 
     + 'T' + hour + ':' + minutes + ':00.000-06:00/';
 }
 
