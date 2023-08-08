@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon app.js",
     "build": "docker build . -t imaged_5",
-    "container": "docker run -p 3000:3000 -v $(PWD):/app imaged_5",
+    "container": "docker run -e TZ=Europe/London -p 3000:3000 -v $(PWD):/app imaged_5",
     "build_run": "npm run build; npm run container",
     "delete_images": "docker rmi $(docker images -q) -f",
     "delete_containers": "docker rm $(docker ps -aq)"

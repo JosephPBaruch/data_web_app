@@ -18,7 +18,7 @@ exports.latLong = async function(req, key){
             return res.json(); // treat fetch response as a .json format and return to next promise
         }).then( data => {
             // return latitude and longitude
-            return data.results[0].geometry.location.lat + "," + data.results[0].geometry.location.lng + '/';
+            return data.results[0].geometry.location;
         }).catch(error => console.log(error)); 
     return coordinates;
 }
@@ -39,7 +39,6 @@ exports.renewToken = async function(user, pass){ // async because of await fetch
             }).then(res => { 
                 return res.json(); // return resulted promise as .json
             }).then(data => {
-                //console.log(data.access_token);
                 return data.access_token; // return token value
             }).catch(function (err) {
                 console.log('something went wrong', err);
@@ -59,9 +58,18 @@ exports.renewToken = async function(user, pass){ // async because of await fetch
 }
 
 // return current date and time in the correct format for meteomatics fetch
-exports.date = function(){
+exports.date = async function(lat, long, key){
+
+    let offset = await fetch('https://maps.googleapis.com/maps/api/timezone/json?location=' + lat + '%2C' + long + '&timestamp=1331161200&key=' + key ) 
+        .then(res => {
+            return res.json(); // treat fetch response as a .json format and return to next promise
+        }).then( data => {
+            return data.rawOffset / 60 / 60 ;
+        }).catch(error => console.log(error)); 
 
     var today = new Date();  // new instance of date()
+
+    let hour = today.getHours() + offset;
 
     if( (today.getMonth()+1) < 10 ){ // add '0' if current month < 10
         month = '0' + (today.getMonth()+1);
@@ -74,10 +82,9 @@ exports.date = function(){
     }else{
         minutes = today.getMinutes();
     }
-
     // no need to modify hours because of military time  
     return today.getFullYear() + '-' + month + '-' + today.getDate() 
-    + 'T' + today.getHours() + ':' + minutes + ':00.000-06:00/';
+    + 'T' + hour + ':' + minutes + ':00.000-06:00/';
 }
 
 // creates correctly formatted URL for meteomatics api fetch
@@ -87,7 +94,7 @@ exports.makeURL = function(dateTime, place, token){
     let statType = 't_2m:F,uv:idx,wind_speed_10m:ms,wind_dir_10m:d,t_max_2m_24h:F,precip_24h:mm,t_min_2m_24h:F' + '/'; // temperature 2 meters above ground in F
     let dataType = 'json?'; // data type in .json form
     let access = 'access_token=';
-    return header + dateTime + statType + place + dataType + access + token; 
+    return header + dateTime + statType + place.lat + "," +  place.lng  + '/' + dataType + access + token; 
 }
 
 // fetch and return meteomatics weather data in .json format

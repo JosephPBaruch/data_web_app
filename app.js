@@ -39,12 +39,12 @@ app.get('/results', (req, res) =>{
 
         let token = await API_Func.renewToken(process.env.METEO_USER, process.env.METEO_PASS); // meteomatics fetch token
 
-        let dateTime = await API_Func.date(); // current time
+        let dateTime = await API_Func.date( coordinates.lat, coordinates.lng, process.env.GEO_API_KEY); // current time
         
         let URL = await API_Func.makeURL(dateTime, coordinates, token);
        
         let value = await API_Func.weatherObj(URL); // fetch weather data
-        
+        //console.log(value);
         res.json(value);
 
     }
