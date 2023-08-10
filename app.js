@@ -1,6 +1,6 @@
 /* Joseph Baruch */
 
-require('dotenv').config()
+require('dotenv').config() // aids use of .env file 
 const express = require('express') // include express module
 const path = require('path') // include path module 
 const app = express() // create express application inside 'app'
@@ -18,39 +18,36 @@ app.get('/', (req, res) =>{
     res.sendFile('app.html', {root: __dirname }); 
 }); 
 
+// create resource page for web app
 app.get('/resources', (req, res) =>{
-   
     res.sendFile('app_resources.html', {root: __dirname }); 
-
 });
 
+// create display page for returned weather values
 app.get('/display', (req, res) =>{
-    
     res.sendFile('display.html', {root: __dirname }); 
-
 });
 
 app.get('/results', (req, res) =>{
 
-    // main(): using the users inputted address, fetch coordinates then weather data
+    main(); // fetch data from external API's
+
+    // main(): using the users entered address, fetch coordinates then weather data
     async function main(){
 
-        let coordinates = await API_Func.latLong(req, process.env.GEO_API_KEY); // address to coordinates
+        let coordinates = await API_Func.latLong(req, process.env.GEO_API_KEY); // Input: address -> Output: coordinates
 
-        let token = await API_Func.renewToken(process.env.METEO_USER, process.env.METEO_PASS); // meteomatics fetch token
+        let token = await API_Func.renewToken(process.env.METEO_USER, process.env.METEO_PASS); // meteomatics token fetch 
 
         let dateTime = await API_Func.date( coordinates.lat, coordinates.lng, process.env.GEO_API_KEY); // current time
         
-        let URL = await API_Func.makeURL(dateTime, coordinates, token);
+        let URL = await API_Func.makeURL(dateTime, coordinates, token); // create full URL for meteomatics Fetch API
        
         let value = await API_Func.weatherObj(URL); // fetch weather data
-        //console.log(value);
-        res.json(value);
+
+        res.json(value); // result of fetch API call is 'value' in json
 
     }
-
-    main();
-
 });
 
 // if endpoint not met (404 error), send message

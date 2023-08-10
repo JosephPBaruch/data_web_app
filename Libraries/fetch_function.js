@@ -1,4 +1,5 @@
 /* Joseph Baruch */
+
 // variables for renew (getting a new token after the previous expired)
 let oldToken;
 let oldHour = 0;
@@ -60,7 +61,7 @@ exports.renewToken = async function(user, pass){ // async because of await fetch
 // return current date and time in the correct format for meteomatics fetch
 exports.date = async function(lat, long, key){
 
-
+    // find time offset from local (Docker container) time for user entered location
     let offset = await fetch('https://maps.googleapis.com/maps/api/timezone/json?location=' + lat + '%2C' + long + '&timestamp=1331161200&key=' + key ) 
         .then(res => {
             return res.json(); // treat fetch response as a .json format and return to next promise
@@ -70,9 +71,10 @@ exports.date = async function(lat, long, key){
 
     var today = new Date();  // new instance of date()
 
-    let dateAdd = 0;
-    let monthChanger = 0;
+    let dateAdd = 0; // increase date if hour 'offset' value makes hour > 24 (hours)
+    let monthChanger = 0; // increase month if date 'dateAdd' value makes date > 31 (days)
 
+    // error handling if offset makes hour > 24
     if((today.getHours() + offset) > 24 ){
         hour = (today.getHours() + offset) - 24 ; 
         dateAdd++;
@@ -83,6 +85,7 @@ exports.date = async function(lat, long, key){
         hour = today.getHours() + offset;
     }
 
+    // error handling if days > 31
     if(dateAdd != 0 ){
         date = today.getDate() + dateAdd;
         
@@ -94,21 +97,23 @@ exports.date = async function(lat, long, key){
             monthChanger--;
             date = '30';
         }
-        
     }else{
         date = today.getDate();
     }
 
+    // error handling if returned month is non double digit
     if( (today.getMonth()+1) < 10 ){ // add '0' if current month < 10
         month = '0' + (today.getMonth()+1);
     }else{
         month = (today.getMonth()+1);
     }
 
+    // finish error handling if days > 31
     if(monthChanger != 0 ){
         month += monthChanger;
     }
 
+    // error handling if returned minutes is non double digit
     if( today.getMinutes() < 10 ){ // add '0' if current minute < 10
         minutes = '0' + today.getMinutes();
     }else{

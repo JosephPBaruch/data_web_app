@@ -13,12 +13,12 @@
     <body>
         <header class="head">
             <h1 class="headText">Get Weather</h1>
-            <p class="headComment">Data displayed using <a href="https://www.meteomatics.com/en/sign-up-weather-api-test-account/">Meteomatics</a></p>
+            <p class="headComment">Data displayed using values from <a href="https://www.meteomatics.com/en/sign-up-weather-api-test-account/">Meteomatics</a></p>
         </header>
 
-        <form id="myForm"> <!-- user inputs their address -->
-            <h2>Enter your address</h2>
-
+        <!-- user inputs their address -->
+        <form id="myForm"> 
+            <h2>Enter your address</h2> 
             <fieldset>
                 <label>Street Number</label>
                     <input type="text" name="number" value="14126" />
@@ -51,7 +51,7 @@
                 const formData = new FormData(form); // get form data
                 let object = formDataToObject(formData); // store form data in object
                 // set object items to values in localStorage
-                toLS(object);
+                toLS(object); // set user entered address values to Items in localStorage
             });
 
             // converts formData to object then returns
@@ -65,13 +65,14 @@
                 );
             }
 
+            // set user entered address values to Items in localStorage
             function toLS(object){
                 localStorage.setItem('number', object.number);
                 localStorage.setItem('street', object.street);
                 localStorage.setItem('type', object.type);
                 localStorage.setItem('city', object.city);
                 localStorage.setItem('state', object.state);
-                // route to display page
+                // route to display page (localStorage values used there)
                 window.location.href = "http://localhost:3000/display";
             }
 

@@ -17,9 +17,6 @@
   },
   "author": "Joseph Baruch",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/JosephPBaruch/diseaseData/issues"
-  },
   "homepage": "https://github.com/JosephPBaruch/diseaseData#readme",
   "dependencies": {
     "dotenv": "^16.3.1",
