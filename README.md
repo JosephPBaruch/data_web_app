@@ -108,4 +108,5 @@
 - 8/6/2023: Started to implement my API and did they by creating a resources page. Still am stuck on the docker credentials issue so I did this rather than being stuck and staring at my screen for hours. 
 - 8/7/2023: I moved all of my functions that did my fetch into a lib file to clean up app.js and make it more readable. This was pretty easy and a good step.
 - 8/8/2023: Created a display page seperate from the user input address page (main page). I did this by using localStorage which was cool because I had never heard of that before today. 
-- 8/9/2023: Only was able to spend time cleaning up my code and commenting areas that were needed. I am satisfied with everything now so the next step will be finishing AWS stuff. 
+- 8/9/2023: Only was able to spend time cleaning up my code and commenting areas that were needed. I am satisfied with everything now so the next step will be finishing AWS stuff.
+- 8/10/2023: I didnt do any coding today for this web app (did some leetcode). I am essentially done with the coding side of things and will mainly be focusing on AWS(ECR, ECS, EC2, etc). 
